@@ -21,6 +21,8 @@ document.querySelector(".check").addEventListener("click", function () {
   const messageP = document.querySelector(".message");
   const score = document.querySelector(".score");
   const highScore = document.querySelector(".highscore");
+  const secretDiv = document.querySelector(".number");
+  const body = document.querySelector("body");
   console.log(this);
   console.log("reacting to click event");
   if (!guess) {
@@ -30,6 +32,9 @@ document.querySelector(".check").addEventListener("click", function () {
     if (guess === secretNumber) {
       // if guess matches
       messageP.textContent = "Guess is correct";
+      body.style.backgroundColor = "green";
+      secretDiv.style.width = "30rem";
+      secretDiv.textContent = secretNumber;
       if (highScore.textContent < scoreValue) {
         highScore.textContent = scoreValue;
       }
